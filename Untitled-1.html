@@ -27,6 +27,11 @@
         </div>
     </nav>
 
+    <!-- Dark Mode Toggle Button -->
+    <button id="darkModeToggle" class="dark-mode-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
@@ -57,20 +62,43 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Projects Section with filtering -->
     <section id="projects" class="projects">
         <h2>My Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="assets/images/project1.jpg" alt="Project 1">
-                <h3>Project One</h3>
-                <p>A brief description of the project and its key features.</p>
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web</button>
+            <button class="filter-btn" data-filter="app">App</button>
+            <button class="filter-btn" data-filter="design">Design</button>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card" data-category="web">
+                <img src="https://via.placeholder.com/300x200" alt="Project 1">
+                <h3>Project 1</h3>
+                <p>A web development project</p>
                 <div class="project-links">
-                    <a href="#" class="button">Live Demo</a>
-                    <a href="#" class="button">GitHub</a>
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                 </div>
             </div>
-            <!-- Add more project cards as needed -->
+            <div class="project-card" data-category="app">
+                <img src="https://via.placeholder.com/300x200" alt="Project 2">
+                <h3>Project 2</h3>
+                <p>A mobile app project</p>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+            <div class="project-card" data-category="design">
+                <img src="https://via.placeholder.com/300x200" alt="Project 3">
+                <h3>Project 3</h3>
+                <p>A design project</p>
+                <div class="project-links">
+                    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -78,14 +106,44 @@
     <section id="contact" class="contact">
         <h2>Get in Touch</h2>
         <div class="contact-content">
-            <form id="contact-form">
-                <input type="text" placeholder="Name" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Message" required></textarea>
-                <button type="submit" class="submit-button">Send Message</button>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Name</label>
+                    <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email</label>
+                    <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <input type="text" id="subject" name="subject" required>
+                    <label for="subject">Subject</label>
+                    <span class="error-message"></span>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Message</label>
+                    <span class="error-message"></span>
+                </div>
+                <button type="submit" class="submit-btn">
+                    <span class="btn-text">Send Message</span>
+                    <span class="btn-loader"></span>
+                </button>
             </form>
         </div>
     </section>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="scroll-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Loading Animation -->
+    <div class="page-loader">
+        <div class="loader"></div>
+    </div>
 
     <!-- Footer -->
     <footer>
