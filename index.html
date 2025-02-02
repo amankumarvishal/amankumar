@@ -3,230 +3,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aman Kumar - AI-Enhanced Portfolio</title>
+    <title>Aman Kumar - Portfolio</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="ai-assistant-overlay" class="hidden">
-        <div class="ai-assistant-container glass-effect">
-            <div class="ai-assistant-header">
-                <h3>AI Career Assistant</h3>
-                <button class="close-btn"><i class="fas fa-times"></i></button>
-            </div>
-            <div class="ai-assistant-content">
-                <div id="career-insights"></div>
-                <div id="skill-recommendations"></div>
-                <div id="networking-suggestions"></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="particles-bg"></div>
-    <div id="three-bg"></div>
-    
-    <nav class="navbar glass-effect">
-        <div class="nav-brand">Aman Kumar<span class="ai-badge">AI</span></div>
+    <nav class="navbar">
+        <div class="nav-brand">Aman Kumar</div>
         <div class="nav-links">
             <a href="#home" class="nav-link">Home</a>
             <a href="#about" class="nav-link">About</a>
             <a href="#projects" class="nav-link">Projects</a>
-            <a href="#skills" class="nav-link">Skills</a>
             <a href="#contact" class="nav-link">Contact</a>
             <button id="theme-toggle" aria-label="Toggle theme">
                 <i class="fas fa-moon"></i>
-            </button>
-            <button id="voice-control" aria-label="Voice control">
-                <i class="fas fa-microphone"></i>
-            </button>
-            <button id="translate-btn" aria-label="Translate">
-                <i class="fas fa-language"></i>
             </button>
         </div>
     </nav>
 
     <section id="home" class="hero">
-        <div class="hero-content glass-effect">
-            <h1 class="animated-text">Welcome to Aman Kumar's Portfolio</h1>
-            <p class="typewriter">Full-Stack Developer & AI Innovator</p>
-            <div class="ai-persona">
-                <div id="ai-mood-indicator"></div>
-                <p id="ai-greeting"></p>
-            </div>
-            <div class="ai-suggestions">
-                <p>AI suggests exploring:</p>
-                <div id="ai-tags" class="animated-tags"></div>
-            </div>
-            <div class="real-time-visitors">
-                <p>Real-time AI Analysis:</p>
-                <div id="visitor-insights"></div>
-            </div>
+        <div class="hero-content">
+            <h1 class="animated-text">Welcome to My Portfolio</h1>
+            <p class="typewriter">Full-Stack Developer</p>
             <a href="#contact" class="cta-button">Let's Connect</a>
         </div>
     </section>
 
     <section id="about" class="about">
-        <div class="section-header glass-effect">
+        <div class="section-header">
             <h2>About Me</h2>
-            <div class="ai-personality-switch">
-                <button data-persona="professional">Professional</button>
-                <button data-persona="creative">Creative</button>
-                <button data-persona="technical">Technical</button>
-            </div>
-            <p class="ai-generated" id="ai-bio">Loading AI-generated bio...</p>
+            <p>I'm a passionate developer with expertise in creating beautiful and functional web applications.</p>
         </div>
-        <div class="about-content glass-effect">
-            <div class="about-text">
-                <div class="experience-timeline">
-                    <div class="timeline-item">
-                        <h3>Experience</h3>
-                        <div id="dynamic-experience"></div>
-                    </div>
-                </div>
-                <div class="ai-career-path">
-                    <h3>AI-Suggested Career Path</h3>
-                    <div id="career-progression"></div>
-                </div>
+        <div class="about-content">
+            <div class="skills">
+                <div class="skill-tag">HTML5</div>
+                <div class="skill-tag">CSS3</div>
+                <div class="skill-tag">JavaScript</div>
+                <div class="skill-tag">React</div>
+                <div class="skill-tag">Node.js</div>
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">MongoDB</div>
+                <div class="skill-tag">Git</div>
             </div>
-            <div class="about-visual">
-                <div class="3d-model" id="avatar-model"></div>
-                <div id="real-time-skills"></div>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills" class="skills">
-        <div class="section-header glass-effect">
-            <h2>Skills & Expertise</h2>
-            <div class="ai-skill-analysis">
-                <div id="market-demand"></div>
-                <div id="skill-growth"></div>
-            </div>
-        </div>
-        <div class="skills-container">
-            <div class="skill-graph" id="skill-visualization"></div>
-            <div class="skill-recommendations glass-effect">
-                <h3>AI Insights</h3>
-                <div id="ai-skill-recommendations"></div>
-                <div id="learning-path"></div>
-                <div id="skill-market-analysis"></div>
-            </div>
-        </div>
-        <div class="tech-radar glass-effect">
-            <h3>Technology Radar</h3>
-            <div id="tech-trends"></div>
         </div>
     </section>
 
     <section id="projects" class="projects">
-        <div class="section-header glass-effect">
+        <div class="section-header">
             <h2>Featured Projects</h2>
-            <div class="ai-project-insights">
-                <div id="project-impact"></div>
-                <div id="tech-stack-analysis"></div>
-            </div>
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-                <button class="filter-btn" data-filter="ai">AI</button>
-                <button class="filter-btn" data-filter="mobile">Mobile</button>
-            </div>
         </div>
-        <div class="project-grid" id="dynamic-projects">
-            <!-- Projects will be dynamically loaded here -->
-        </div>
-        <div class="project-recommendations glass-effect">
-            <h3>AI Project Recommendations</h3>
-            <div id="project-suggestions"></div>
+        <div class="project-grid">
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3 class="project-title">E-Commerce Platform</h3>
+                    <p class="project-description">A full-stack e-commerce platform with modern UI and secure payment integration.</p>
+                    <div class="project-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">Node.js</span>
+                        <span class="tag">MongoDB</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Live</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3 class="project-title">Task Management App</h3>
+                    <p class="project-description">A collaborative task management application with real-time updates.</p>
+                    <div class="project-tags">
+                        <span class="tag">Vue.js</span>
+                        <span class="tag">Firebase</span>
+                        <span class="tag">CSS3</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Live</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="project-card">
+                <div class="project-image"></div>
+                <div class="project-content">
+                    <h3 class="project-title">Portfolio Website</h3>
+                    <p class="project-description">A modern portfolio website with smooth animations and responsive design.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML5</span>
+                        <span class="tag">CSS3</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link">View Live</a>
+                        <a href="#" class="project-link">Source Code</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="contact" class="contact">
-        <div class="section-header glass-effect">
+        <div class="section-header">
             <h2>Get in Touch</h2>
-            <div class="ai-communication-assist">
-                <div id="communication-style"></div>
-                <div id="response-suggestions"></div>
-            </div>
         </div>
-        <div class="contact-container glass-effect">
+        <div class="contact-container">
             <form id="contact-form" class="contact-form">
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <textarea name="message" placeholder="Your Message" required></textarea>
-                <div class="ai-analysis">
-                    <div class="sentiment-analysis">
-                        <span>Message Tone: </span>
-                        <span id="sentiment-indicator"></span>
-                    </div>
-                    <div class="response-prediction">
-                        <span>Expected Response Time: </span>
-                        <span id="response-time"></span>
-                    </div>
-                </div>
                 <button type="submit" class="submit-button">
                     <span>Send Message</span>
                     <i class="fas fa-paper-plane"></i>
                 </button>
             </form>
-            <div class="ai-chat-support">
-                <div class="chat-header">
-                    <h3>AI Assistant</h3>
-                    <div class="chat-controls">
-                        <button id="voice-chat">
-                            <i class="fas fa-microphone"></i>
-                        </button>
-                        <button id="translate-chat">
-                            <i class="fas fa-language"></i>
-                        </button>
-                    </div>
-                </div>
-                <div id="chat-messages"></div>
-                <div class="chat-input-container">
-                    <input type="text" id="chat-input" placeholder="Ask me anything...">
-                    <div id="smart-suggestions"></div>
-                </div>
-            </div>
         </div>
     </section>
 
-    <div class="floating-nav">
-        <button id="scroll-top" aria-label="Scroll to top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        <button id="ai-assistant" aria-label="AI Career Assistant">
-            <i class="fas fa-robot"></i>
-        </button>
-        <button id="quick-actions" aria-label="Quick Actions">
-            <i class="fas fa-bolt"></i>
-        </button>
-    </div>
-
-    <footer class="glass-effect">
+    <footer>
         <div class="social-links">
             <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
             <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
             <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
         </div>
-        <div class="ai-social-insights">
-            <div id="network-suggestions"></div>
-            <div id="engagement-metrics"></div>
-        </div>
-        <p>&copy; 2025 Aman Kumar. Enhanced with <i class="fas fa-brain"></i> AI</p>
+        <p>&copy; 2025 Aman Kumar. All rights reserved.</p>
     </footer>
 
-    <!-- Scripts -->
-    <script type="module" src="js/config.js"></script>
-    <script type="module" src="js/three-background.js"></script>
-    <script type="module" src="js/particles-config.js"></script>
-    <script type="module" src="js/ai-features.js"></script>
-    <script type="module" src="js/career-ai.js"></script>
-    <script type="module" src="js/skill-tracker.js"></script>
-    <script type="module" src="js/chat-config.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
