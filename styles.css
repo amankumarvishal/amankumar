@@ -1,4 +1,103 @@
 /* General Styles */
+/* ... (other CSS) ... */
+
+/* Projects Section */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #fff; /* Default background */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* For positioning the overlay */
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
+    padding: 20px;
+    text-align: center;
+    position: relative; /* To allow overlaying the gradient */
+    z-index: 1; /* Bring text in front of gradient */
+
+}
+
+.project-info h3 {
+    margin: 0 0 10px;
+    font-size: 1.5rem;
+    color: #333; /* Default text color */
+    transition: color 0.3s; /* Smooth color change on hover */
+}
+
+.project-info p {
+    margin: 0 0 15px;
+    color: #666; /* Default text color */
+        transition: color 0.3s; /* Smooth color change on hover */
+}
+
+.project-link {
+    color: #ff6f61; /* Default link color */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: #ff9a9e;
+}
+
+
+/*  Colorful Overlay Styles (More Flexible) */
+.project-card::before { /* Pseudo-element for the overlay */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s, background 0.3s; /* Smooth transitions */
+    z-index: 0; /* Place behind the text */
+    border-radius: 10px; /* Match card radius */
+
+}
+
+.project-card:hover::before { /* Show on card hover */
+    opacity: 1;
+    background: linear-gradient(135deg, hsl(var(--hue), 70%, 50%), hsl(calc(var(--hue) + 60), 70%, 50%)); /* Example gradient */
+
+}
+
+/* Color Variables (For Easy Customization) */
+.project-card:nth-child(1n) { --hue: 0; } /* Reddish */
+.project-card:nth-child(2n) { --hue: 60; } /* Yellowish */
+.project-card:nth-child(3n) { --hue: 120; } /* Greenish */
+.project-card:nth-child(4n) { --hue: 240; } /* Bluish */
+.project-card:nth-child(5n) { --hue: 300; } /* Purplish */
+/* ... add more as needed */
+
+/* Text Color Change on Hover */
+.project-card:hover .project-info h3,
+.project-card:hover .project-info p,
+.project-card:hover .project-link {
+    color: #fff; /* White text on hover */
+}
+
+/* ... (rest of your CSS) */
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
